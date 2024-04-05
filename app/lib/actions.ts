@@ -131,7 +131,7 @@ export async function updateInvoice(id: string, prevState:State,  formData: Form
                 await signIn('credentials', formData)
         } catch (error) {
             if(error instanceof AuthError){
-                switch (error) {
+                switch (error.type) {
                     case 'CredentialsSignin':
                             return 'Invalid credentials.'
                 
